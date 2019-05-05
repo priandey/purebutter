@@ -16,12 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
-from butter_app import views
 
 urlpatterns = [
-    path('', views.index),
     path('admin/', admin.site.urls),
-    path('butter/', include('butter_app.urls')),
 ]
 
 if settings.DEBUG:

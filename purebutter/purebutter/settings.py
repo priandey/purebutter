@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
-    'butter_app.apps.ButterAppConfig',
+    'products',
+    'home',
+    'user',
 ]
 
 MIDDLEWARE = [
