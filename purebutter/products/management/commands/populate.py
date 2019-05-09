@@ -42,15 +42,15 @@ class Command(BaseCommand):
                 try:
                     if entry['stores'] == '':
                         continue
-                    product = Product(name = entry['product_name'],
-                                      nutrition_grade = entry['nutrition_grades'],
-                                      url = entry['url'],
-                                      store = entry['stores'],
-                                      category = category,
-                                      image_link=entry["image_front_url"])
+                    product = Product(name=entry['product_name'],
+                                      nutrition_grade=entry['nutrition_grades'],
+                                      url=entry['url'],
+                                      store=entry['stores'],
+                                      category=category,
+                                      thumb_link=entry["image_front_url"],
+                                      diet_link=entry['selected_images']['ingredients']['display']['fr'])
                     product.save()
                 except KeyError:
                     product_incomplete += 1
                     continue
-            self.stdout.write("=== DONE ===")
-            self.stdout.write(f'{product_incomplete} products incomplete')
+            self.stdout.write(f'=== DONE {product_incomplete} products incomplete ===')

@@ -7,4 +7,7 @@ class Product(models.Model):
     url = models.CharField(max_length=255)
     store = models.CharField(max_length=255)
     category = models.CharField(max_length=140)
-    image_link = models.CharField(max_length=255)
+    thumb_link = models.CharField(max_length=255)
+    diet_link = models.CharField(max_length=255)
+
+    # TODO: Chercher infos sur les migrations files
