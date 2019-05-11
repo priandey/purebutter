@@ -9,5 +9,3 @@ class Product(models.Model):
     category = models.CharField(max_length=140)
     thumb_link = models.CharField(max_length=255)
     diet_link = models.CharField(max_length=255)
-
-    # TODO: Chercher infos sur les migrations files
