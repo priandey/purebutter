@@ -31,9 +31,10 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, **kwargs)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_('email_address'), unique=True)
+    email = models.EmailField(_('email'), unique=True)
     date_joined = models.DateTimeField(_('date_joined'), auto_now_add=True)
     is_active = models.BooleanField(_('active'), default=True)
+    is_staff = models.BooleanField(_('admin'), default=False)
 
     objects = UserManager()
 
@@ -48,5 +49,3 @@ class UserFavorite(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     to_substitute = models.ForeignKey(Product, related_name='%(class)s_tosubstitute', on_delete=models.CASCADE)
     substitution = models.ForeignKey(Product, related_name='%(class)s_substitute', on_delete=models.CASCADE)
-
-# TODO : Finir système authentification + vue de signup
