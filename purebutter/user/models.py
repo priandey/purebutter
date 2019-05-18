@@ -31,10 +31,10 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, **kwargs)
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(_('email'), unique=True)
-    date_joined = models.DateTimeField(_('date_joined'), auto_now_add=True)
-    is_active = models.BooleanField(_('active'), default=True)
-    is_staff = models.BooleanField(_('admin'), default=False)
+    email = models.EmailField(verbose_name=_('email'), unique=True)
+    date_joined = models.DateTimeField(verbose_name=_('date_joined'), auto_now_add=True)
+    is_active = models.BooleanField(verbose_name=_('active'), default=True)
+    is_staff = models.BooleanField(verbose_name=_('admin'), default=False)
 
     objects = UserManager()
 

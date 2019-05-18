@@ -1,6 +1,7 @@
 import random
 
 from django.shortcuts import render
+
 from .models import Product
 
 def get_substitute(to_substitute, precision=10):
@@ -23,5 +24,7 @@ def get_substitute(to_substitute, precision=10):
 
         return random.choice(pot_substitutes)
 
+# TODO : Move get_substitute in Product model
+# TODO : Browsing products == Search field with autocomplete (jquery UI) => https://code.jquery.com/ui/ + https://www.tutorialspoint.com/jqueryui/jqueryui_autocomplete.htm
 
-# TODO : Browsing products
+
