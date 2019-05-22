@@ -14,6 +14,7 @@ def sign_in(request):
         sent = True
         new_user = CustomUser.objects.create_user(email, password)
         new_user.save()
+        return redirect('home')
 
     return render(request, 'user/signin.html', locals())
 
@@ -29,6 +30,7 @@ def log_in(request):
         if user is not None:
             login(request=request, user=user)
             logged = True
+            return(redirect("home"))
         else:
             logged = False
 
@@ -38,4 +40,4 @@ def log_in(request):
 def log_out(request):
 
     logout(request)
-    return redirect(log_in)
+    return redirect("home")
