@@ -9,7 +9,7 @@
 
     <script>
          $(function() {
-            $( "#autoSearchField" ).autocomplete({
+            $( "#id_research" ).autocomplete({
                source: "{% url 'autocomplete' %}",
                minLength: 2
             });
@@ -27,7 +27,10 @@
 
     </div>
     <div id="searchField">
-        <form action="{% url 'search' %}" method="get" name="form"><input id="autoSearchField" style="width: 50%"></form>
+     <form action="{% url "search" %}" method="post">
+         {% csrf_token %}
+         {{ form }}
+     </form>
     </div>
 </body>
 </html>

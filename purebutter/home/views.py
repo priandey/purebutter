@@ -4,14 +4,12 @@ from django.http import JsonResponse
 from products.forms import SearchForm
 from products.models import Product
 
-# TODO : Page d'accueil avec champs de recherche, lien de connexion et lien de logout
-
 def home(request):
+    form = SearchForm()
     return render(request, "home/home.html", locals())
 
 def autocomplete(request):
     term = request.GET['term']
-    form = SearchForm()
     final_list = []
     limit = 15
     incr = 0

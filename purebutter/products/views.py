@@ -4,12 +4,12 @@ from django.shortcuts import render, HttpResponse
 
 from .models import Product
 
-def product_detail(request, product_id):
+def search_product(request):
+    searchterm = request.POST['research']
+    selected_product = Product.objects.filter(name=searchterm)[0]
+    substitute = Product.objects.get_substitute(selected_product)
+
     return render(request, 'products/product.html', locals())
 
-def search_product(request):
-    print(request.GET)
-    return HttpResponse("Succeeded")
 
-# TODO : Views for products
-
+# TODO : Save substitute
