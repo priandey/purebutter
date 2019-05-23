@@ -1,7 +1,7 @@
-from django.urls import path, include
+from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.home, name="home"),
-    path('autocomplete', views.autocomplete, name="autocomplete")
+    path('autocomplete/', views.autocomplete, name="autocomplete")
 ]

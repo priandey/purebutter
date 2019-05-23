@@ -11,3 +11,4 @@ def search_product(request):
 
 
 # TODO : Save substitute
+# TODO : Pass directly product ID in the form

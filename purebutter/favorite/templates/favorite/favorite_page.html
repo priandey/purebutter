@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite page</title>
+</head>
+<body>
+    {% for favorite in all_favorites%}
+
+        <p>{{ favorite.to_substitute.name }} REMPLACE PAR {{ favorite.substition.name }}</p>
+    {% endfor %}
+</body>
+</html>
