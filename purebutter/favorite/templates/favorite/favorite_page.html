@@ -6,8 +6,9 @@
 </head>
 <body>
     {% for favorite in all_favorites%}
-
-        <p>{{ favorite.to_substitute.name }} REMPLACE PAR {{ favorite.substition.name }}</p>
+        <a href = {% url "product" favorite.to_substitute.id %}>{{ favorite.to_substitute.name }}</a> RPL PAR
+        <a href = {% url "product" favorite.substitution.id %}>{{ favorite.substitution.name }}</a>
+        <br>
     {% endfor %}
 </body>
 </html>

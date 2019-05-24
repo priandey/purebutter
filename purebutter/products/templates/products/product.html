@@ -4,28 +4,11 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-        {% if user.is_authenticated %}
-         <form action="{% url 'add_favorite' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="to_substitute" value="{{ selected_product.id }}">
-            <input type="hidden" name="substitution" value="{{ substitute.id }}">
-            <input type="submit" name="Save" value="Save in favorites">
-         </form>
-        {% endif %}
-
-        <div class="to_sub">
-            <p>Nom : {{ selected_product.name }} </p>
-            <p>Note nutritionnelle : {{ selected_product.nutrition_grade }}</p>
-            <p>Catégorie : {{ selected_product.category }}</p>
-            <img src="{{ selected_product.thumb_link }}" />
-        </div>
-        <div class="sub">
-            <p>Nom : {{ substitute.name }}</p>
-            <p>Note nutritionnelle : {{ substitute.nutrition_grade }}</p>
-            <p>Catégorie : {{ substitute.category }}</p>
-            <img src="{{ substitute.thumb_link }}" />
-        </div>
-        <a href="{% url 'home' %}">Retour à l'accueil</a>
+        <div class="product">
+            <p>Nom : {{ prod.name }} </p>
+            <p>Note nutritionnelle : {{ prod.nutrition_grade }}</p>
+            <p>Catégorie : {{ prod.category }}</p>
+            <img src="{{ prod.thumb_link }}" />
 
     </body>
 </html>

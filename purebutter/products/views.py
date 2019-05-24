@@ -7,8 +7,11 @@ def search_product(request):
     selected_product = Product.objects.filter(name=searchterm)[0]
     substitute = Product.objects.get_substitute(selected_product)
 
-    return render(request, 'products/product.html', locals())
+    return render(request, 'products/product_substitute.html', locals())
 
+def product(request, id):
+    prod = Product.objects.get(pk=id)
+    return render(request, "products/product.html", locals())
 
 # TODO : Save substitute
 # TODO : Pass directly product ID in the form

@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, redirect, HttpResponse
 
 from products.models import Product
 
@@ -12,12 +12,15 @@ def add_favorite(request):
                                     substitution=Product.objects.get(pk=request.POST["substitution"])
                                     )
         new_favorite.save()
-        all_favorites = UserFavorite.objects.filter(user=request.user)
     else:
         redirect('home')
 
-    return render(request, 'favorite_page', locals())
+    return redirect('fav_list')
 
+def fav_list(request):
+    all_favorites = UserFavorite.objects.filter(user=request.user)
+
+    return render(request, 'favorite/favorite_page.html', locals())
 
 #TODO: Finish to add_favorite view
 #TODO : Finish favorite_page.html
