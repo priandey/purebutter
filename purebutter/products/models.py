@@ -9,7 +9,7 @@ class ProductManager(models.Manager):
         [param] to_substitute: Product object to substitute
         [param] precision: Increase the amount of items taken into account in the substitution draw.
                             Increasing precision will increase chances that a low graded product is selected.
-        [return] should return a Product object, whith a higher nutrition_grade than to_substitute
+        [return] should return a Product object, with a higher nutrition_grade than to_substitute
         """
         pot_substitutes = list()
 

@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Favorite page</title>
 </head>
 <body>
-    {% for favorite in all_favorites%}
-        <a href = {% url "product" favorite.to_substitute.id %}>{{ favorite.to_substitute.name }}</a> RPL PAR
+    {% for favorite in all_favorites %}
+        <img src="{{ favorite.to_substitute.thumb_link }}" height="200px" width="150px">
+        <a href = {% url "product" favorite.to_substitute.id %}>{{ favorite.to_substitute.name }}</a>
+        RPL PAR
         <a href = {% url "product" favorite.substitution.id %}>{{ favorite.substitution.name }}</a>
+        <img src="{{ favorite.substitution.thumb_link }}" height="200px" width="150px">
         <br>
     {% endfor %}
 </body>
