@@ -6,7 +6,7 @@ from products.models import Product
 
 def home(request):
     form = SearchForm()
-    return render(request, "home/home.html", locals())
+    return render(request, "home/index.html", locals())
 
 def autocomplete(request):
     term = request.GET['term']
