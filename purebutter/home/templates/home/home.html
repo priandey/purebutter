@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Home page</title>
-    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
-    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-     <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-
-    <script>
-         $(function() {
-            $( "#id_research" ).autocomplete({
-               source: "{% url 'autocomplete' %}",
-               minLength: 1
-            });
-         });
-      </script>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
     <div id="user">
         {% if request.user.is_authenticated %}
             <a href="{% url 'fav_list' %}">Go to favorite list</a><br>
@@ -27,11 +10,4 @@
         {% endif %}
 
     </div>
-    <div id="searchField">
-     <form action="{% url "search" %}" method="post">
-         {% csrf_token %}
-         {{ form }}
-     </form>
-    </div>
-</body>
-</html>
+{% endblock %}

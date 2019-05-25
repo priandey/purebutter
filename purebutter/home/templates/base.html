@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel = "stylesheet">
+</head>
+<body>
+    {% block header %}
+        <header>
+            <div id="searchField" class="autocomplete">
+             <form action="{% url "search" %}" method="post">
+                 {% csrf_token %}
+                 {{ form }}
+             </form>
+            </div>
+        </header>
+    {% endblock %}
+
+    {% block content %}{% endblock %}
+
+    {% block footer %}{% endblock %}
+
+    {% block bottom_script %}
+        <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+        <script>
+             $(function() {
+                $( ".id_research" ).autocomplete({
+                   source: "{% url 'autocomplete' %}",
+                   minLength: 1
+                });
+             });
+          </script>
+    {% endblock %}
+</body>
+</html>

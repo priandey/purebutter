@@ -23,6 +23,7 @@ class ProductManager(models.Manager):
                 break
 
             return random.choice(pot_substitutes)
+        # TODO : Improve substitute diversity
 
 
 class Product(models.Model):

@@ -21,3 +21,6 @@ def autocomplete(request):
             break
 
     return JsonResponse(final_list, safe=False)
+
+# TODO : Organiser les pages avec des extends de base.html
+# TODO : Install Node.js

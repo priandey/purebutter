@@ -43,3 +43,4 @@ def log_out(request):
     return redirect("home")
 
 # TODO : User profile (change info/loof in fav)
+# TODO : Page utilisateur
