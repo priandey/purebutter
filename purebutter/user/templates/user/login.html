@@ -1,9 +1,9 @@
-{% if logged %} Connexion réussie
-{% elif logged == False %} Echec de la connexion {% endif %}
-{% if user.is_authenticated %} Connexion de test est active {% endif %}
-
-<form action="{% url 'login' %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% extends "home/index.html" %}
+    {% block masthead_title %} Connexion {% endblock %}
+    {% block formulary %}
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-light" type="submit" value="Se connecter" />
+        </form>
+    {% endblock %}

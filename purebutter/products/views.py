@@ -4,8 +4,8 @@ from .models import Product
 
 def search_product(request):
     searchterm = request.POST['research']
-    selected_product = Product.objects.filter(name=searchterm)[0]
-    substitute = Product.objects.get_substitute(selected_product)
+    prod = Product.objects.filter(name=searchterm)[0]
+    substitutes = Product.objects.get_substitute(prod)
 
     return render(request, 'products/product_substitute.html', locals())
 

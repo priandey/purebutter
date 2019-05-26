@@ -29,7 +29,7 @@
   @include media-breakpoint-up(lg) {
     // Base styling for the navbar - screen sizes greater than the large breakpoint
     box-shadow: none;
-    background-color: transparent;
+    background-color: $primary;
     .navbar-brand {
       color: fade-out($white, .3);
       &:hover {

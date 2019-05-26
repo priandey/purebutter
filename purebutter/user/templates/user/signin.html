@@ -1,7 +1,9 @@
-{% if sent %} Vous avez été enregistré !{% endif %}
-
-<form action="{% url "signin" %}" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Submit" />
-</form>
+{% extends "home/index.html" %}
+    {% block masthead_title %} Inscription {% endblock %}
+    {% block formulary %}
+        <form action="{% url 'signin' %}" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-light" type="submit" value="Créer un compte" />
+        </form>
+    {% endblock %}

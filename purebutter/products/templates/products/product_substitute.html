@@ -1,31 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-        {% if user.is_authenticated %}
-         <form action="{% url 'add_favorite' %}" method="post">
-            {% csrf_token %}
-            <input type="hidden" name="to_substitute" value="{{ selected_product.id }}">
-            <input type="hidden" name="substitution" value="{{ substitute.id }}">
-            <input type="submit" name="Save" value="Save in favorites">
-         </form>
-        {% endif %}
+{% extends "products/product.html" %}
 
-        <div class="to_sub">
-            <p>Nom : {{ selected_product.name }} </p>
-            <p>Note nutritionnelle : {{ selected_product.nutrition_grade }}</p>
-            <p>Catégorie : {{ selected_product.category }}</p>
-            <img src="{{ selected_product.thumb_link }}" />
-        </div>
-        <div class="sub">
-            <p>Nom : {{ substitute.name }}</p>
-            <p>Note nutritionnelle : {{ substitute.nutrition_grade }}</p>
-            <p>Catégorie : {{ substitute.category }}</p>
-            <img src="{{ substitute.thumb_link }}" />
-        </div>
-        <a href="{% url 'home' %}">Retour à l'accueil</a>
+{% block content %}
+    <div class="row align-content-center">
+            {% for substitute in substitutes %}
+                <div class="col-md-4 col-12 text-center">
+                    <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"></a>
+                    <p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p>
+                    <p class="text-white-75">{{ substitute.name | truncatechars:32 }}</p>
 
-    </body>
-</html>
+                {% if user.is_authenticated %}
+                     <form class="align-content-center" action="{% url 'add_favorite' %}" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="to_substitute" value="{{ prod.id }}">
+                        <input type="hidden" name="substitution" value="{{ substitute.id }}">
+                        <input type="submit" name="Save" value="Save in favorites">
+                     </form>
+
+                {% endif %}
+                </div>
+            {% endfor %}
+    </div>
+{% endblock %}
+
+<!-- TODO : Images régulières -->

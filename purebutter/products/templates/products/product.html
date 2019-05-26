@@ -1,11 +1,21 @@
 {% extends "home/index.html" %}
-{% block background %}background-image:url({{ prod.thumb_link }});background-color:black;background-repeat:no-repeat;background-size:contain
+
+{% block masthead_background %}
+    background-image:url({{ prod.thumb_link }});background-color:black;background-repeat:no-repeat;background-size:contain
 {% endblock %}
-{% block homeblock %}
-    <h1 class="text-uppercase text-white font-weight-bold">{{ prod.name }}</h1>
+
+{% block masthead_title %}
+    {{ prod.name }}
 {% endblock %}
-{% block form %}{% endblock %}
+
+{% block formulary %}<!-- No form -->{% endblock %}
+
 {% block content %}
-    <p>Note nutritionnelle : {{ prod.nutrition_grade }}</p>
-    <p>Catégorie : {{ prod.category }}</p>
+    <div class="row">
+        <p class="text-white-75 col-lg-6 align-content-lg-start">Note nutritionnelle : {{ prod.nutrition_grade.capitalize }}</p>
+        <p class="text-white-75 col-lg-6 align-content-lg-end">Catégorie : {{ prod.clean_category }}</p>
+    </div>
+    <div class="row justify-content-center" >
+        <a class="btn btn-light btn-xl" href="{{ prod.url }}" style="margin-top: 5rem;padding:0.5rem 8rem;">Consulter sur OpenFoodFacts</a>
+    </div>
 {% endblock %}
