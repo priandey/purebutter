@@ -29,20 +29,20 @@
   @include media-breakpoint-up(lg) {
     // Base styling for the navbar - screen sizes greater than the large breakpoint
     box-shadow: none;
-    background-color: $primary;
+    background-color: rgba( 52, 90, 97 , 0.35);
     .navbar-brand {
-      color: fade-out($white, .3);
+      color: fade_out(#86ebe6, .3);
       &:hover {
-        color: $white;
+        color: #86ebe6;
       }
     }
     .navbar-nav {
       .nav-item {
         .nav-link {
-          color: fade-out($white, .3);
+          color: fade_out(#86ebe6, .3);
           padding: 0 1rem;
           &:hover {
-            color: $white;
+            color: #86ebe6;
           }
         }
         &:last-child {

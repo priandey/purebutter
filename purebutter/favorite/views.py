@@ -23,5 +23,4 @@ def fav_list(request):
 
     return render(request, 'favorite/favorite_page.html', locals())
 
-#TODO: Finish to add_favorite view
-#TODO : Finish favorite_page.html
+#TODO : Implemente Theme on favorite page

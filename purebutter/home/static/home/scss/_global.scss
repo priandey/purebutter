@@ -24,6 +24,7 @@ hr.light {
 // Button restyling
 .btn {
   font-family: $font-family-sans-serif;
+  background-color: rgba(52, 90, 97,0.7);
 }
 
 .btn-xl {
@@ -45,14 +46,13 @@ hr.light {
     border-radius: 10rem;
     border: none;
     height: 2.25rem;
-    width: 50rem;
   text-align: center;
 }
 
 .img-thumbnail {
     padding: 0rem;
     border-radius: .25rem;
-    max-width: 100%;
+    width: 100%;
     height: 60%;
 }
 
