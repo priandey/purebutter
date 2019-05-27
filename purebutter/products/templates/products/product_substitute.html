@@ -3,11 +3,11 @@
 {% block content %}
     <div class="row align-content-center">
             {% for substitute in substitutes %}
-                <div class="col-md-4 col-12 text-center">
+                <div class="col-md-4 col-12 text-center sub_proposition">
                     <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"></a>
                     <p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p>
                     <p class="text-white-75">{{ substitute.name | truncatechars:32 }}</p>
-
+                {% block save_content %}
                 {% if user.is_authenticated %}
                      <form class="align-content-center" action="{% url 'add_favorite' %}" method="post">
                         {% csrf_token %}
@@ -17,6 +17,7 @@
                      </form>
 
                 {% endif %}
+                {% endblock%}
                 </div>
             {% endfor %}
     </div>

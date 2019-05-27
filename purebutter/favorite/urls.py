@@ -3,5 +3,6 @@ from . import views
 
 urlpatterns = [
     path('add_fav/', views.add_favorite, name="add_favorite"),
-    path('fav_list/', views.fav_list, name="fav_list"),
+    path('fav_list/', views.fav_overview, name="fav_list"),
+    path('detail/<int:id>', views.fav_detail, name="fav_detail"),
 ]

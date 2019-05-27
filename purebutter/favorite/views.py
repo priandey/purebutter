@@ -18,9 +18,12 @@ def add_favorite(request):
 
 
 @login_required(login_url="login")
-def fav_list(request):
-    all_favorites = UserFavorite.objects.filter(user=request.user)
+def fav_overview(request):
+    all_favorites = UserFavorite.objects.filter(user=request.user).order_by('id').reverse()
 
+    return render(request, 'favorite/favorite_page.html', locals())
+
+def fav_detail(request):
     return render(request, 'favorite/favorite_page.html', locals())
 
 #TODO : Implemente Theme on favorite page
