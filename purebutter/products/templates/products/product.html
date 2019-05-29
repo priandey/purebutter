@@ -1,5 +1,5 @@
 {% extends "home/index.html" %}
-
+{% block title %} {{ prod.name }} {% endblock %}
 {% block masthead_background %}
     background-image:url({{ prod.thumb_link }});background-color:black;background-repeat:no-repeat;background-size:contain
 {% endblock %}

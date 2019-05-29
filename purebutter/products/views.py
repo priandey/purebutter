@@ -16,3 +16,4 @@ def product(request, id):
     prod = Product.objects.get(pk=id)
     return render(request, "products/product.html", locals())
 
+# TODO : Définir le besoins pour la page "Aliments". Page proposant aliment + substitut,  ou simplement substitut sans lien avec l'aliment ?

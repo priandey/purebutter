@@ -10,7 +10,6 @@ class ProductManager(models.Manager):
         [return] should return a Product object, with a higher nutrition_grade than to_substitute
         """
         pot_substitutes = list()
-        print(len(self.order_by('nutrition_grade').filter(category=to_substitute.category)))
         for prod in self.order_by('nutrition_grade').filter(category=to_substitute.category):
             if prod.nutrition_grade < to_substitute.nutrition_grade and to_substitute.nutrition_grade != "a" \
                     or to_substitute.nutrition_grade == "a" == prod.nutrition_grade: # 'a' is smaller than 'b'

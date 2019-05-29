@@ -24,7 +24,8 @@ class Command(BaseCommand):
                     'cereales-pour-petit-dejeuner',
                     'plats-prepares',
                     'fromages',
-                    'sodas'
+                    'sodas',
+                    'snacks-sales'
                     ]
 
         for category in categories:

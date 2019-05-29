@@ -1,4 +1,5 @@
 {% extends "home/index.html" %}
+{% block title %} S'identifier {% endblock %}
     {% block masthead_title %} Connexion {% endblock %}
     {% block formulary %}
         <form action="{% url 'login' %}" method="post">

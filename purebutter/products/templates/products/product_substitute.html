@@ -1,5 +1,5 @@
 {% extends "products/product.html" %}
-
+{% block title %} Substituts pour {{ prod.name }} {% endblock %}
 {% block content %}
     <div class="row align-content-center">
             {% for substitute in substitutes %}

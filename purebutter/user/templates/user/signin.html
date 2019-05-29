@@ -1,4 +1,5 @@
 {% extends "home/index.html" %}
+    {% block title %} Créer un compte {% endblock %}
     {% block masthead_title %} Inscription {% endblock %}
     {% block formulary %}
         <form action="{% url 'signin' %}" method="post">
