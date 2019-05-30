@@ -19,7 +19,6 @@ class ProductManager(models.Manager):
             if precision <= 0:
                 break
         return pot_substitutes
-        # TODO : Improve substitute diversity
 
 
 class Product(models.Model):

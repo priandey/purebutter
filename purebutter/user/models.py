@@ -43,3 +43,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.email
+
+    @property
+    def simplify_mail(self):
+        return self.email.split("@")[0].capitalize()
