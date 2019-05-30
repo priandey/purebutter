@@ -44,23 +44,38 @@ hr.light {
 // Personal add
 .autocomplete {
     border-radius: 10rem;
-    border: none;
+    border: 0.5px solid grey;
     height: 2.25rem;
     text-align: center;
 }
 
+.thumbnail {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
 .img-thumbnail {
-    padding: 0rem;
-    border-radius: .25rem;
-    width: 100%;
-    height: 60%;
+  object-fit: cover;
+  height: 400px;
+  width: 300px;
 }
 
 .nutrigrade-thumb {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0.5em 0.75em;
-    background: white;
-    border-radius: 100%;
+  position: absolute;
+  border-radius: 50%;
+  background-color: #aaa;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  text-align: center;
+  line-height: 2rem;
+  margin: 0;
+  right: 0rem;
+  top: -1rem;
+}
+
+.sub_proposition {
+  padding: 0rem 0rem;
+  margin: auto;
 }

@@ -12,7 +12,7 @@ class ProductManager(models.Manager):
         pot_substitutes = list()
         for prod in self.order_by('nutrition_grade').filter(category=to_substitute.category):
             if prod.nutrition_grade < to_substitute.nutrition_grade and to_substitute.nutrition_grade != "a" \
-                    or to_substitute.nutrition_grade == "a" == prod.nutrition_grade: # 'a' is smaller than 'b'
+                    or to_substitute.nutrition_grade == "a" == prod.nutrition_grade:  # 'a' is smaller than 'b'
                 pot_substitutes.append(prod)
                 precision -= 1
 
@@ -35,3 +35,8 @@ class Product(models.Model):
     @property
     def clean_category(self):
         return " ".join(self.category.split("-")).capitalize()
+
+    @property
+    def full_image(self):
+        url = self.thumb_link
+        return url.replace("400.jpg", "full.jpg")

@@ -4,6 +4,7 @@ from .models import Product
 
 def search_product(request):
     searchterm = request.POST['research']
+    print(searchterm)
     try:
         prod = Product.objects.filter(name=searchterm)[0]
     except IndexError:

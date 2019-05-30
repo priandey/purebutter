@@ -1,15 +1,16 @@
 {% extends "products/product.html" %}
 {% block title %} Substituts pour {{ prod.name }} {% endblock %}
 {% block content %}
-    <div class="row align-content-center">
+    <div class="row justify-content-center">
             {% for substitute in substitutes %}
-                <div class="col-md-4 col-12 text-center sub_proposition">
-                    <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"></a>
-                    <p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p>
-                    <p class="text-white-75">{{ substitute.name | truncatechars:32 }}</p>
+                <div class="col-md-4 col-12">
+                    <div class="col-11 thumbnail">
+                        <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"><p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p></a>
+                    </div>
+                    <p class="offset-2 col-8 text-center text-white-75" style="margin-bottom: 0">{{ substitute.name | truncatechars:32 }}</p>
                 {% block save_content %}
                 {% if user.is_authenticated %}
-                     <form class="align-content-center" action="{% url 'add_favorite' %}" method="post">
+                     <form class="offset-3 col-6" action="{% url 'add_favorite' %}" method="post">
                         {% csrf_token %}
                         <input type="hidden" name="to_substitute" value="{{ prod.id }}">
                         <input type="hidden" name="substitution" value="{{ substitute.id }}">
@@ -22,5 +23,3 @@
             {% endfor %}
     </div>
 {% endblock %}
-
-<!-- TODO : Images régulières -->
