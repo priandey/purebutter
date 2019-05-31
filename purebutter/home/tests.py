@@ -1,4 +1,4 @@
 from django.test import TestCase
 
-# TODO: Create your tests here.
+# TODO: Test views
 # TODO : Coverage (Mini 90% du projet)

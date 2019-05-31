@@ -10615,6 +10615,8 @@ hr.light {
 .img-thumbnail {
   -o-object-fit: cover;
   object-fit: cover;
+  -o-object-position: bottom center;
+  object-position: bottom center;
   height: 400px;
   width: 300px;
 }
