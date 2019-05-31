@@ -42,7 +42,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto my-2 my-lg-0">
             <li class="nav-item">
-             <form action="{% url "search" %}" method="post">
+             <form action="{% url "search" %}" method="post" class="col align-self-center">
                  {% csrf_token %}
                  <input type="text" class="autocomplete" name="research">
                  <input type="submit" hidden="true">

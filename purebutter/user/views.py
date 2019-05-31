@@ -50,4 +50,3 @@ def user_profile(request):
     user = request.user
     return render(request, 'user/profile.html', locals())
 
-# TODO : Page utilisateur

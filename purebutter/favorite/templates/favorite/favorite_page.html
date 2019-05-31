@@ -1,19 +1,19 @@
 {% extends 'products/product_substitute.html' %}
 {% block title %} Aliments enregistrés {% endblock %}
 {% block masthead_title %}Aliments pour {{ user.email }}{% endblock %}
+{% block masthead_background %}{% endblock %}
 {% block content %}
-    <div class="row align-content-center">
+    <div class="row justify-content-center">
             {% for favorite in all_favorites %}
                 {% with substitute=favorite.substitution %}
-                <div class="col-md-4 col-12 text-center sub_proposition">
-                    <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"></a>
-                    <p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p>
-                    <p class="text-white-75">{{ substitute.name | truncatechars:32 }}</p>
+                <div class="col-md-4 col-12">
+                <div class="col-11 thumbnail">
+                    <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"><p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p></a>
+                 </div>
+                    <p class="offset-2 col-8 text-center text-white-75" style="margin-bottom: 0">{{ substitute.name | truncatechars:32 }}</p>
                 </div>
                 {% endwith %}
             {% endfor %}
             {% block save_content %}{% endblock %}
     </div>
 {% endblock %}
-
-<!-- TODO: Setup a prettier page -->

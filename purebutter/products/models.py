@@ -1,7 +1,9 @@
+import random
+
 from django.db import models
 
 class ProductManager(models.Manager):
-    def get_substitute(self, to_substitute, precision=6):
+    def get_substitute(self, to_substitute, precision=30):
         """
 
         [param] to_substitute: Product object to substitute
@@ -18,7 +20,7 @@ class ProductManager(models.Manager):
 
             if precision <= 0:
                 break
-        return pot_substitutes
+        return random.choices(pot_substitutes, k=6)
 
 
 class Product(models.Model):

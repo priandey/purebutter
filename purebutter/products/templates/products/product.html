@@ -1,7 +1,7 @@
 {% extends "home/index.html" %}
 {% block title %} {{ prod.name }} {% endblock %}
 {% block masthead_background %}
-    background-image:url({{ prod.full_image }});background-color:black;background-repeat:no-repeat;background-size:contain
+    background: linear-gradient(rgba(232, 167, 93, 0.10), rgba(232, 167, 93, 0.90)), url({{ prod.full_image }});background-repeat:no-repeat;background-size:cover
 {% endblock %}
 
 {% block masthead_title %}
