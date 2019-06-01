@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-
 from .models import Product
 
 
@@ -10,7 +9,6 @@ def search_product(request):
     except IndexError:
         return redirect("home")
     substitutes = Product.objects.get_substitute(prod)
-
     return render(request, 'products/product_substitute.html', locals())
 
 
