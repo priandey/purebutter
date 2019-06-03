@@ -25,3 +25,5 @@ def fav_overview(request):
 
 def fav_detail(request):
     return render(request, 'favorite/favorite_page.html', locals())
+
+# TODO: Checkup "fav_detail" view
