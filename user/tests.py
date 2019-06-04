@@ -1,5 +1,8 @@
+from django.urls import reverse
 from django.test import TestCase
+
 from .models import CustomUser
+
 
 class TestUserView(TestCase):
     @classmethod
@@ -7,7 +10,8 @@ class TestUserView(TestCase):
         CustomUser.objects.create_user(email="pedro@pedro.pedro", password="testpwd")
 
     def test_signin(self):
-        path = '/user/signin/'
+        # -tc- utiliser reverse pour les urls
+        path = reverse('signin')
         # Correct form input
         response = self.client.post(path, {"email":"luci@luci.luci", "password":"testingpwd"})
         self.assertEquals(response.status_code, 302)
@@ -16,7 +20,8 @@ class TestUserView(TestCase):
         self.assertFalse(response.context['validForm'])
 
     def test_login(self):
-        path = '/user/login/'
+        # -tc- utiliser reverse pour les urls
+        path = reverse("login")
         # Correct email and password
         response = self.client.post(path, {"email":"pedro@pedro.pedro", "password":"testpwd"})
         self.assertEquals(response.status_code, 302)
@@ -27,13 +32,20 @@ class TestUserView(TestCase):
         response = self.client.post(path, {"email":"pedro@pedro.pedro", "password":"falsepwd"})
         self.assertFalse(response.context['logged'])
 
+        # -tc- test login with client.login
+        response = self.client.login(email="pedro@pedro.pedro", password="testpwd")
+        self.assertTrue(response, "The expected response must be True")
+
+        response = self.client.login(email="pedro@pedro.pedro", password="testwrongpwd")
+        self.assertFalse(response, "The expected response must be False since password is incorrect")
+
     def test_logout(self):
-        path = '/user/logout/'
+        path = reverse('logout')
         response = self.client.get(path)
         self.assertEquals(response.status_code, 302)
 
     def test_user_profile(self):
-        path = '/user/profile/'
+        path = reverse('profile')
         # User is logged
         self.client.login(username="pedro@pedro.pedro", password="testpwd")
         response = self.client.get(path)
@@ -41,7 +53,7 @@ class TestUserView(TestCase):
         # User is not logged
         self.client.logout()
         response = self.client.get(path)
-        self.assertEquals(response.status_code)
+        self.assertEquals(response.status_code, 302)
 
 
 # TODO:Repair test_user_profile NOT LOGIN
