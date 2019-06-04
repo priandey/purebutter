@@ -47,7 +47,7 @@ class ProductManagerTest(TestCase):
             Product.objects.filter(nutrition_grade="e")[0],  # Nutrigrade "e"
         ]
 
-        for case in  cases:
+        for case in cases:
             result = Product.objects.get_substitute(case)
             alternate_result = Product.objects.get_substitute(case)
             self.assertNotEqual(result, alternate_result)

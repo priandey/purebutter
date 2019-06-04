@@ -18,5 +18,7 @@ class TestFavoriteViews(TestCase):
 
     def test_add_favorite(self):
         self.client.login(username="pedro@pedro.pedro", password="testpwd")
-        response = self.client.post("/favorites/add_fav/", {"to_substitute":1, "substitution":2})
+        to_sub = Product.objects.all()[0].pk
+        sub = Product.objects.all()[1].pk
+        response = self.client.post("/favorites/add_fav/", {"to_substitute": to_sub, "substitution": sub})
         self.assertEqual(response.status_code, 302)
