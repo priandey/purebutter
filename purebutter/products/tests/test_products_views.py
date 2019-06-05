@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.urls import reverse
-from .models import Product
+from ..models import Product
 
 class ProductViewTest(TestCase):
     @classmethod

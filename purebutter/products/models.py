@@ -21,7 +21,8 @@ class ProductManager(models.Manager):
             if precision <= 0:
                 break
         return random.choices(pot_substitutes, k=6)
-
+# TODO: Put Manager in managers.py
+# TODO: autopep8, flake8
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -42,3 +43,7 @@ class Product(models.Model):
     def full_image(self):
         url = self.thumb_link
         return url.replace("400.jpg", "full.jpg")
+
+    @property
+    def nutri_image(self):
+        return f"https://static.openfoodfacts.org/images/misc/nutriscore-{self.nutrition_grade}.svg"

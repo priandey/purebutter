@@ -130,3 +130,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 AIL = True
+
+# TODO : Deploiement https://devcenter.heroku.com/categories/working-with-django

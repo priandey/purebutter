@@ -13,7 +13,7 @@
 {% block content %}
     <div class="row">
         <p class="text-white-75 col-lg-6 align-content-lg-start">
-            <img src="https://static.openfoodfacts.org/images/misc/nutriscore-{{ prod.nutrition_grade }}.svg"
+            <img src="{{ prod.nutri_image }}">
         </p>
         <p class="text-white-75 col-lg-6 align-content-lg-end">Catégorie : {{ prod.clean_category }}</p>
         <!-- TODO: Repères nutritionnels pour 100g -->
