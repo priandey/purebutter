@@ -22,8 +22,3 @@ def fav_overview(request):
     all_favorites = UserFavorite.objects.filter(user=request.user).order_by('id').reverse()
 
     return render(request, 'favorite/favorite_page.html', locals())
-
-def fav_detail(request):
-    return render(request, 'favorite/favorite_page.html', locals())
-
-# TODO: Checkup "fav_detail" view
