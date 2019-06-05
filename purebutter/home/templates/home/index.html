@@ -32,11 +32,10 @@
 
   <!-- Navigation -->
   {% block navbar %}
-      <!-- TODO: See for logo reduction for responsivness -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
         <!-- LOGO -->
-      <a class="navbar-brand js-scroll-trigger" href="{% url 'home' %}#page-top"><img src="{% static 'home/img/logo_pur_beurre.png' %}" height="30%" width="30%"> </a>
+      <a class="navbar-brand js-scroll-trigger d-none d-sm-inline" href="{% url 'home' %}#page-top"><img src="{% static 'home/img/logo_pur_beurre.png' %}" height="30%" width="30%"> </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -110,8 +109,8 @@
                 <div class="col-lg-12 text-center">
                   <h2 class="text-white mt-0">De la ratatouille aux croissants</h2>
                     <hr class="divider light my-4">
-                    <p class="card-text">Pur Beurre est l'initiative de deux amoureux de la gastronomie française, Colette Tatou et Rémy,
-                        que vous avez déjà certainement rencontrés dans notre excellent restaurant Ratatouille. </p>
+                    <strong>Pur Beurre est l'initiative de deux amoureux de la gastronomie française, Colette Tatou et Rémy,
+                        que vous avez déjà certainement rencontrés dans notre excellent restaurant Ratatouille. </strong>
                     <div class="row justify-content-center">
                         <div class="col-lg-6 col-sm-12 text-center">
                             <img src="{% static 'home/img/colette.png' %}" height="400px" width="200px">
