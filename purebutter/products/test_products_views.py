@@ -26,5 +26,3 @@ class ProductViewTest(TestCase):
         # Testing with incorrect input
         response = self.client.post('/products/search', {'research':'WrongInput'})
         self.assertEquals(response.status_code, 302)
-
-#TODO: Se renseigner sur le fonctionnement de setUpTestData => Error quand je lance tout les tests ensembles, pas d'erreur quand je les lance individuellement

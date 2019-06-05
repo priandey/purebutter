@@ -45,4 +45,3 @@ class TestViewsHome(TestCase):
             self.assertNotIn(product, incorrect_products)
 
 # TODO: Test views
-# TODO : Coverage (Mini 90% du projet)
