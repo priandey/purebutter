@@ -7,7 +7,7 @@ from django.db import migrations, models
 import django.db.models.deletion
 import django.utils.timezone
 
-
+# flake8: noqa
 class Migration(migrations.Migration):
 
     initial = True

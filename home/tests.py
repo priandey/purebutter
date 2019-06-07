@@ -1,7 +1,7 @@
 from django.test import TestCase
-from django.http import JsonResponse
 
 from products.models import Product
+
 
 class TestViewsHome(TestCase):
     @classmethod
@@ -19,7 +19,9 @@ class TestViewsHome(TestCase):
             ("worst product", "e", "cat1"),
         ]
         for product in products:
-            Product.objects.create(name=product[0], nutrition_grade=product[1], category=product[2])
+            Product.objects.create(
+              name=product[0], nutrition_grade=product[1], category=product[2])
+
     def test_home(self):
         response = self.client.get('/')
         self.assertEquals(response.status_code, 200)

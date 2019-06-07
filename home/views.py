@@ -4,9 +4,11 @@ from django.http import JsonResponse
 from products.forms import SearchForm
 from products.models import Product
 
+
 def home(request):
     main_form = SearchForm()
     return render(request, "home/index.html", locals())
+
 
 def autocomplete(request):
     term = request.GET['term']
