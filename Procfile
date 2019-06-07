@@ -1,3 +1,3 @@
-init: python manage.py migrate
-init: python manage.py populate
+release: python manage.py migrate
+release: python manage.py populate
 web: gunicorn purebutter.wsgi
