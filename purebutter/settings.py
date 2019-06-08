@@ -86,7 +86,7 @@ DATABASES = {
         'NAME': 'purebutter',
         'USER': 'postgres',
         'PASSWORD': 'pitour',
-        'HOST': os.environ['DATABASE_URL'],
+        'HOST': "",
         'PORT': '5432',
     }
 }
