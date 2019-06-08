@@ -15,8 +15,7 @@
         <p class="text-white-75 col-lg-6 align-content-lg-start">
             <img src="{{ prod.nutri_image }}">
         </p>
-        <p class="text-white-75 col-lg-6 align-content-lg-end">Catégorie : {{ prod.clean_category }}</p>
-        <!-- TODO: Repères nutritionnels pour 100g -->
+        <img src="{{ prod.diet_link }}" class="col-lg-6 align-content-lg-end">
     </div>
     <div class="row justify-content-center" >
         <a class="btn btn-light btn-xl" href="{{ prod.url }}" style="margin-top: 5rem;padding:0.5rem 8rem;">Consulter sur OpenFoodFacts</a>

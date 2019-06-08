@@ -10640,6 +10640,11 @@ hr.light {
   margin: auto;
 }
 
+#saveButton {
+  background: none;
+  border: none;
+}
+
 #mainNav {
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);

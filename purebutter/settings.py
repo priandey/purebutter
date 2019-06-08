@@ -132,4 +132,3 @@ STATIC_URL = '/static/'
 AIL = True
 
 django_heroku.settings(locals())
-# TODO : Deploiement https://devcenter.heroku.com/categories/working-with-django

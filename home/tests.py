@@ -45,5 +45,3 @@ class TestViewsHome(TestCase):
         for product in response.json():
             self.assertIn(product, correct_products)
             self.assertNotIn(product, incorrect_products)
-
-# TODO: Test views

@@ -10,7 +10,7 @@
                 <div class="col-11 thumbnail">
                     <a href="{% url 'product' substitute.id %}"><img src="{{ substitute.thumb_link }}" class="img-thumbnail"><p class="nutrigrade-thumb">{{ substitute.nutrition_grade | upper }}</p></a>
                  </div>
-                    <p class="offset-2 col-8 text-center text-white-75" style="margin-bottom: 0">{{ substitute.name | truncatechars:32 }}</p>
+                    <p class="offset-2 col-8 text-center text-white-75" style="margin-bottom: 0">{{ substitute.name | truncatechars:25 }}</p>
                 </div>
                 {% endwith %}
             {% endfor %}

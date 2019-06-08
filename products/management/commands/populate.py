@@ -48,9 +48,12 @@ class Command(BaseCommand):
                                       store=entry['stores'],
                                       category=category,
                                       thumb_link=entry["image_front_url"],
-                                      diet_link=entry['selected_images']['ingredients']['display']['fr'])
+                                      diet_link=entry['selected_images']['ingredients']['display']['fr'])  # TODO: Infos nutritionelles, pas ingrédients !
                     product.save()
                 except KeyError:
                     product_incomplete += 1
                     continue
             self.stdout.write(f'=== DONE {product_incomplete} products incomplete ===')
+
+
+# TODO: Rework populate command

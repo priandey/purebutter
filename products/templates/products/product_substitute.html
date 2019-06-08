@@ -1,7 +1,7 @@
 {% extends "products/product.html" %}
 {% block title %} Substituts pour {{ prod.name }} {% endblock %}
 {% block content %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" xmlns="http://www.w3.org/1999/html">
             {% for substitute in substitutes %}
                 <div class="col-md-4 col-12">
                     <div class="col-11 thumbnail">
@@ -14,8 +14,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="to_substitute" value="{{ prod.id }}">
                         <input type="hidden" name="substitution" value="{{ substitute.id }}">
-                        <input type="submit" name="Save" value="Save in favorites">
-                     <!-- TODO: Add floppy disk icon -->
+                         <button type="submit" name="Save" id="saveButton"><i class="fas fa-save fa-2x"></i> Sauvegarder</button>
                      </form>
 
                 {% endif %}

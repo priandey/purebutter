@@ -1,9 +1,9 @@
 {% extends 'home/index.html' %}
 {% block title %} {{ user.simplify_mail }}{% endblock %}
 
-{% block masthead_title %} {{ user.simplify_mail }} {% endblock %}
+{% block masthead_title %} Ahoy, {{ user.simplify_mail }} !{% endblock %}
 {% block formulary %}{% endblock %}
 
-{% block content %} {{ user.email }} {% endblock %}
+{% block content %} <p class="text-white-75 offset-4 col-8 align-content-center">Votre Email : {{ user.email }}</p> {% endblock %}
 
 {% block contact %}{% endblock %}
