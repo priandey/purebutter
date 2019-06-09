@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.db.utils import IntegrityError
 
 from .forms import SigninForm
 from .models import CustomUser
@@ -13,9 +14,12 @@ def sign_in(request):
     if form.is_valid():
         email = form.cleaned_data['email']
         password = form.cleaned_data['password']
-        new_user = CustomUser.objects.create_user(email, password)
-        new_user.save()
-        return redirect('home')
+        try:
+            new_user = CustomUser.objects.create_user(email, password)
+            new_user.save()
+            return redirect('home')
+        except IntegrityError:
+            duplicate_email = True
     else:
         validForm = False
 

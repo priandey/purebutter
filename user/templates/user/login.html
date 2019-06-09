@@ -1,10 +1,13 @@
 {% extends "home/index.html" %}
+
 {% block title %} S'identifier {% endblock %}
     {% block masthead_title %} Connexion {% endblock %}
     {% block formulary %}
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             {{ form.as_p }}
-            <input class="btn btn-light" type="submit" value="Se connecter" />
+            <input class="btn btn-primary btn-xl" type="submit" value="Se connecter" />
         </form>
+        <br>
+        <a href="{% url 'signin' %}"><input class="btn btn-primary btn-xl" type="button" value="Créer un compte" /></a>
     {% endblock %}
