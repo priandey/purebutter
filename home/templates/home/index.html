@@ -75,6 +75,7 @@
 
 
   <!-- Masthead -->
+  {% block masthead %}
   <header class="masthead" style="{% block masthead_background %}{% endblock %}">
     <div class="container h-100">
       <div class="row h-100 align-items-center justify-content-center text-center">
@@ -99,7 +100,7 @@
         </div>
       </div>
   </header>
-
+{% endblock %}
 
   <!-- About Section -->
   <section class="page-section bg-primary" id="about">
@@ -174,7 +175,7 @@
   <footer class="bg-light py-5">
     <div class="container">
       <div class="row justify-content-between">
-          <div class="col-12 col-md-2"><a href="https://www.freeprivacypolicy.com/privacy/view/2e50b976bfeda2c2f43df969a7b468ba">Mentions légales</a></div>
+          <div class="col-12 col-md-2"><a href="{% url 'legal' %}">Mentions légales</a></div>
           <div class="col-12 col-md-2"><a href="{% url 'home' %}#contact">Contact</a></div>
       </div>
     </div>

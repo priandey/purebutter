@@ -9,6 +9,8 @@ def home(request):
     main_form = SearchForm()
     return render(request, "home/index.html", locals())
 
+def legal_mention(request):
+    return render(request, "home/legal_mention.html")
 
 def autocomplete(request):
     term = request.GET['term']

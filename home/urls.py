@@ -4,4 +4,5 @@ from . import views
 urlpatterns = [
     path('', views.home, name="home"),
     path('autocomplete/', views.autocomplete, name="autocomplete"),
+    path('legal', views.legal_mention, name="legal"),
 ]
