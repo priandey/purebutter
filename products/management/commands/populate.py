@@ -5,6 +5,10 @@ import requests
 
 
 class Command(BaseCommand):
+    '''
+    Custom management command, used to populate database with data from OpenFoodFacts.
+    Call command by typing "manage.py populate" in cli.
+    '''
 
     def handle(self, *args, **options):
         payload = {'action': 'process',
@@ -48,7 +52,7 @@ class Command(BaseCommand):
                                       store=entry['stores'],
                                       category=category,
                                       thumb_link=entry["image_front_url"],
-                                      diet_link=entry['selected_images']['ingredients']['display']['fr'])  # TODO: Infos nutritionelles, pas ingrédients !
+                                      diet_link=entry['selected_images']['ingredients']['display']['fr'])
                     product.save()
                 except KeyError:
                     product_incomplete += 1

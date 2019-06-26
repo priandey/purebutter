@@ -8,6 +8,9 @@ from .models import CustomUser
 
 
 def sign_in(request):
+    '''
+    Sign In view
+    '''
 
     form = SigninForm(request.POST or None)
 
@@ -27,6 +30,9 @@ def sign_in(request):
 
 
 def log_in(request):
+    '''
+    Log in view
+    '''
 
     form = SigninForm(request.POST or None)
 
@@ -45,6 +51,9 @@ def log_in(request):
 
 
 def log_out(request):
+    '''
+    Log out view
+    '''
 
     logout(request)
     return redirect("home")
@@ -52,5 +61,8 @@ def log_out(request):
 
 @login_required(login_url="login")
 def user_profile(request):
+    '''
+    Return user profile, user need to be logged.
+    '''
     user = request.user
     return render(request, 'user/profile.html', locals())
